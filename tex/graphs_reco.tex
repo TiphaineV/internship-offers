@@ -1,0 +1,104 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[english]{babel}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX,Numbers=OldStyle}% ,Scale=MatchLowercase} bug in current Biolinum
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+%\usepackage[sc]{mathpazo}
+\linespread{1.2}         % Palatino needs more leading (space between lines)
+\usepackage{fancyhdr}
+\usepackage[head=2cm,top=1cm,left=2cm,right=2cm,includehead]{geometry}
+%\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm,showframe,includehead]{geometry}
+\usepackage{lastpage}
+\usepackage{graphicx}
+
+\geometry{
+  a4paper,
+  left=20mm,
+  right=20mm,
+  bottom=4cm,
+}
+
+\pagenumbering{gobble}  
+
+\newcommand{\nom}{Dr.~Rapha\"el \textsc{Fournier-S'niehotta}}
+\newcommand{\raph}{
+\nom \\
+\mail\, -- \telephone \\
+CNAM Paris\\
+Laboratoire CÉDRIC, équipe VERTIGO\\
+37-1-40 -- 2, rue Conté 75003 Paris\\
+}
+
+\newcommand{\tiph}{
+Dr. Tiphaine \textsc{Viard} \\
+\mailtiph\, -- \telephone \\
+Riken Advanced Intelligence Project\\
+Discrete Optimization Unit\\
+1-3-1 Nihonbashi, Chuo-ku, Tokyo\\
+}
+
+\newcommand{\telephone}{00 33 1 58 80 86 35}
+
+\newcommand{\mail}{fournier@cnam.fr}
+\newcommand{\mailtiph}{tiphaine.viard@riken.jp}
+\newcommand{\dest}{ 
+    \textsc{\Large Offre de stage \\ 
+    Master 2 -- PFE ingénieur recherche}\\[1ex]
+    {\Huge Systèmes de recommandation \\
+    et graphes dynamiques}
+  }
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{.5pt}
+\lhead{\includegraphics[width=6cm]{cnamlogo.png}}% use your logo
+\rhead{\includegraphics[height=2cm]{rikenlogo.png}}
+\lfoot{
+\raph
+}
+%\cfoot{Page \thepage{} of \pageref{LastPage}}
+\cfoot{}
+\rfoot{
+\tiph
+}
+
+\begin{document}
+
+\pagestyle{fancy} 
+
+\addvspace{1cm}
+\begin{center}
+  \dest
+\end{center}
+
+\addvspace{1cm}
+
+Le terme de {\em système de recommandation} regroupe l'ensemble des tâches d'apprentissage automatique ({\em machine learning}) où l'on veut faire correpondre les goûts d'utilisateurs et de produits selon leurs goûts et leurs propriétés. 
+Les méthodes de l'état-de-l'art reposent typiquement sur des méthodes de factorisation de matrices, reconnues pour leur efficacité.
+
+Récemment, l'explicabilité et la justifiabilité des systèmes d'apprentissage automatique en général, et des systèmes de recommandations en particulier, ont retenu l'attention de la communauté scientifique.
+Cependant, ces questionnements se heurtent à de nombreux problèmes; l'un d'entre eux est que l'équité et la diversité ne sont pas formellement définis; un travail fondamental est nécessaire.
+
+Les graphes, c'est-à-dire des ensembles de n\oe{}uds reliés entre eux par des arêtes, sont un modèle naturel pour les systèmes de recommandation.
+On peut recourir à un graphe dirigé, pondéré, dynamique, biparti (ou une combinaison de ces propriétés), selon l'application considérée.
+Une propriété clef de ces graphes est leur interprétabilité, et en fait des objets très répandus aussi bien en informatique qu'en biologie ou en sociologie.
+
+Le but de ce stage est d'explorer l'apport des graphes et des flots de liens pour les systèmes de recommandation sociaux, après que de premiers travaux aient validé cette approche~\cite{}.
+Dans un premier temps, il faut définir un ensemble de descripteurs de graphes et de flots de liens adaptés; par exemple, des métriques de similarités telles que l'indice de Jaccard~\footnote{Étant donné deux n\oe{}uds $u$ et $v$ et leur voisinages $N(u)$ et $N(v)$, l'indice de Jaccard mesure la similarité entre les deux voisinages: ${\cal J}(u,v) = \frac{|N(u)\cap N(v)|}{|N(u) \cup N(v)|}$.}, ou encore des métriques de centralité.
+
+Ensuite, nous proposons d'intégrer ces métriques à des algorithmes à l'état de l'art de l'apprentissage automatique: des méthodes classiques, par exemple de {\em gradient boosting}~\cite{} ou des {\em factorization machines}~\cite{}, ainsi que des méthodes plus récentes d'apprentissage profond autour des réseaux de neurones de graphes.
+
+
+\section{Déroulement du stage et gratification}
+
+Le stage se déroulera entre le laboratoire Cedric du Conservatoire National des Arts et Métiers (3 mois), à Paris, et le Riken Advanced Intelligence Project (3 mois), à Tokyo.
+
+Une gratification de stage de 577,05 euros est prévue pour la partie en France, ainsi que la moitié du coût de transport.
+
+Une gratification de stage de 66000 yens (environ 530 euros), ainsi qu'une prise en charge du logement (dans la limite de 100000 yens -- environ 850 euros par mois) et la totalité du transport est prévue. Le billet d'avion aller/retour pour Tokyo sera également pris en charge.
+
+\section{Contact}
+
+Vous pouvez envoyer votre demande accompagnée d'un CV aux adresses \texttt{fournier@cnam.fr} et \texttt{tiphaine.viard@riken.jp}.
+
+\end{document}
